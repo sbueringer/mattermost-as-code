@@ -91,6 +91,13 @@ func runImport(c *cobra.Command) error {
 				if resp.Error != nil {
 					return resp.Error
 				}
+
+				// update the category again, because otherwise the channel order is not used
+				_, resp = client.UpdateSidebarCategoryForTeamForUser(user.Id, team.Id, out.Id, category)
+				if resp.Error != nil {
+					return resp.Error
+				}
+
 				categoryOrder = append(categoryOrder, out.Id)
 			}
 

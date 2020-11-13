@@ -8,3 +8,6 @@ Initial release which support exporting/importing channels
 * fixed --teams flag name
 * removed Mattermost env var values in help output
 
+# v0.1.2 - 2020-13-11
+
+* fixed channel order on category update
