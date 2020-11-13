@@ -22,7 +22,7 @@ func NewCmdExport() *cobra.Command {
 			return runExport(c)
 		},
 	}
-	cmd.Flags().StringVar(&team, "input", "", "export only a specific team")
+	cmd.Flags().StringVar(&team, "team", "", "export only a specific team")
 	return cmd
 }
 

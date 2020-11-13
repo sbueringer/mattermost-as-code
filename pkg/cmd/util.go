@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"os"
 	"strings"
 
 	"github.com/spf13/pflag"
@@ -13,13 +14,24 @@ func getClient(flags *pflag.FlagSet) (*model.Client4, *model.User, error) {
 	if err != nil {
 		return nil, nil, err
 	}
+	if username == "" {
+		username = os.Getenv("MATTERMOST_USERNAME")
+	}
+
 	password, err := flags.GetString("password")
 	if err != nil {
 		return nil, nil, err
 	}
+	if password == "" {
+		password = os.Getenv("MATTERMOST_PASSWORD")
+	}
+
 	url, err := flags.GetString("url")
 	if err != nil {
 		return nil, nil, err
+	}
+	if url == "" {
+		url = os.Getenv("MATTERMOST_URL")
 	}
 
 	client := model.NewAPIv4Client(url)

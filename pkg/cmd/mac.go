@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/spf13/cobra"
 )
@@ -18,9 +17,9 @@ func NewCmdMac() *cobra.Command {
 		},
 	}
 
-	cmd.PersistentFlags().String("username", os.Getenv("MATTERMOST_USERNAME"), "Mattermost username, can also be set via MATTERMOST_USERNAME")
-	cmd.PersistentFlags().String("password", os.Getenv("MATTERMOST_PASSWORD"), "Mattermost password, can also be set via MATTERMOST_PASSWORD")
-	cmd.PersistentFlags().String("url", os.Getenv("MATTERMOST_URL"), "Mattermost url, can also be set via MATTERMOST_URL")
+	cmd.PersistentFlags().String("username", "", "Mattermost username, can also be set via MATTERMOST_USERNAME")
+	cmd.PersistentFlags().String("password", "", "Mattermost password, can also be set via MATTERMOST_PASSWORD")
+	cmd.PersistentFlags().String("url", "", "Mattermost url, can also be set via MATTERMOST_URL")
 
 	cmd.AddCommand(NewCmdImport())
 	cmd.AddCommand(NewCmdExport())
