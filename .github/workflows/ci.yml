@@ -54,7 +54,7 @@ jobs:
 
     - name: Upload plugin to release
       id: upload-release-asset-linux
-      uses: actions/upload-release-asset@v1
+      uses: actions/upload-release-asset@v1.0.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -64,7 +64,7 @@ jobs:
         asset_content_type: application/zip
     - name: Upload plugin to release
       id: upload-release-asset-darwin
-      uses: actions/upload-release-asset@v1
+      uses: actions/upload-release-asset@v1.0.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -74,7 +74,7 @@ jobs:
         asset_content_type: application/zip
     - name: Upload plugin to release
       id: upload-release-asset-windows
-      uses: actions/upload-release-asset@v1
+      uses: actions/upload-release-asset@v1.0.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
